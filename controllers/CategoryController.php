@@ -7,14 +7,15 @@ use Yii;
 
 class CategoryController extends Controller
 {
+
     public function actionIndex(){
         $goods = new Good();
         $goods = $goods->getAllGoods();
+        Yii::$app->view->title = 'Суши магазин';
         return $this->render('index', compact('goods'));
     }
 
-    public function actionView($id)
-    {
+    public function actionView($id) {
         $goods = new Good();
         $goods = $goods->getGoodsCategories($id);
         return $this->render('view', compact('goods'));
@@ -25,4 +26,5 @@ class CategoryController extends Controller
         $goods = $goods->getSearchResult($search);
         return $this->render('search', compact('goods', 'search'));
     }
+
 }
