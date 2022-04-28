@@ -22,8 +22,8 @@ class AppAsset extends AssetBundle
     public $css = [
        //'css/site.css',
         'css/style.css',
-        'css/bootstrap-grid.min.css',
-        'css/bootstrap-grid.min.css',
+        /*'css/bootstrap.min.css',
+        'css/bootstrap-grid.min.css',*/
     ];
     public $js = [
         'js/main.js',
