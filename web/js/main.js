@@ -12,6 +12,22 @@ function openCart(event){
         }
     })
 }
+
+function clearCart(event){
+    event.preventDefault();
+    $.ajax({
+        url: '/cart/clear',
+        type: 'GET',
+        success: function (res){
+            $('#cart .modal-content').html(res);
+            },
+        error: function (){
+            alert("ERROR");
+        }
+    })
+}
+
+
 $('.product-button__add').on('click', function (event){
     event.preventDefault();
     let name = $(this).data('name');
@@ -28,4 +44,10 @@ $('.product-button__add').on('click', function (event){
             alert("ERROR");
         }
     })
-});
+})
+
+$('.modal').on('click','.btn-close', function (){
+    console.log('123');
+    $('#cart').modal('hide');
+})
+

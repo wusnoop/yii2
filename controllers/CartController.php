@@ -8,13 +8,18 @@ use yii\web\Controller;
 
 class CartController extends Controller
 {
+    public function actionClear(){
+        $session = Yii::$app->session;
+        $session->open();
+        $session->remove('cart');
+        $session->remove('cart.totalQuantity');
+        $session->remove('cart.totalPrice');
+        return $this->renderPartial('cart', compact( 'session'));
+    }
 
     public function actionOpen(){
         $session = Yii::$app->session;
         $session->open();
-        /*$session->remove('cart');
-        $session->remove('cart.totalQuantity');
-        $session->remove('cart.totalPrice');*/
         return $this->renderPartial('cart', compact( 'session'));
     }
 
@@ -27,4 +32,6 @@ class CartController extends Controller
         $cart->addToCart($good);
         return $this->renderPartial('cart', compact('good', 'session'));
     }
+
+
 }

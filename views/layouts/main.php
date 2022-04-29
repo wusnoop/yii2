@@ -56,7 +56,7 @@ AppAsset::register($this);
 </section>
 <div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
-        <div class="modal-content">
+        <div class="modal-content" style="padding: 15px">
             ...
         </div>
     </div>
