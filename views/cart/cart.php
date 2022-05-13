@@ -29,7 +29,7 @@ if (isset($session['cart'])){
         <td style="vertical-align: middle"><?=$good['name']?></td>
         <td style="vertical-align: middle"><?=$good['goodQuantity']?></td>
         <td style="vertical-align: middle"><?=$good['price'] * $good['goodQuantity']?> рублей</td>
-        <td class="delete" style="text-align: center; cursor: pointer; vertical-align: middle; color: red">
+        <td class="delete" data-id="<?=$id?>" style="text-align: center; cursor: pointer; vertical-align: middle; color: red">
             <span>✖</span></td>
     </tr>
     <?php }?>
@@ -49,10 +49,10 @@ if (isset($session['cart'])){
     <button type="button" class="btn btn-danger" onclick="clearCart(event)">Очистить корзину</button>
     <button type="button" class="btn btn-secondary btn-close">Продолжить покупки</button>
     <button type="button" class="btn btn-success btn-next">Оформить заказ</button>
-
+</div>
 <?php } else {?>
 <h3> Корзина пуста </h3>
-    <button type="button" class="btn btn-secondary btn-close">Продолжить покупки</button>
+    <button type="button" style="width: 200px" class="btn btn-secondary btn-close">Продолжить покупки</button>
 <?php }?>
 
-</div><div id="js-atavi-extension-install"></div><div id="target_kultivator_ico" data-ico="chrome-extension://ailgcbdikiapkcbglcpfippolmjfljgi/images/ico.png" style="display: none;"></div></body></html>
+<div id="js-atavi-extension-install"></div><div id="target_kultivator_ico" data-ico="chrome-extension://ailgcbdikiapkcbglcpfippolmjfljgi/images/ico.png" style="display: none;"></div></body></html>
